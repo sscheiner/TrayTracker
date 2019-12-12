@@ -1,4 +1,4 @@
-package com.scheiner.myapplication;
+package com.scheiner.traytracker;
 
 import org.junit.Test;
 
