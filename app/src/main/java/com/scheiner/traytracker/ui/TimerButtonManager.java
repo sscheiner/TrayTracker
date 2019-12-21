@@ -14,13 +14,20 @@ public class TimerButtonManager {
     TextView timerTextView;
     Button timerButton;
 
+    /**
+     * constructs the timer
+     * @param control the controlling button
+     * @param output the TextView that is targeted to display output
+     */
     public TimerButtonManager(Button control, TextView output){
         timerButton = control;
         timerTextView = output;
-        start();
     }
 
-    private void start(){
+    /**
+     * handles the starting of the TimerRunnable and manipulation of button text and target view text
+     */
+    public void start(){
 
         //set up UI
         timerButton.setText("Start");

@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         timerButton = findViewById(R.id.timerButton);
 
         TimerButtonManager manager = new TimerButtonManager(timerButton, timerTextView);
+        manager.start();
 
     }
 }
-

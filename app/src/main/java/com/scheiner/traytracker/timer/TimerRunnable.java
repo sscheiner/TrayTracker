@@ -6,19 +6,25 @@ import android.widget.TextView;
 import com.scheiner.traytracker.util.TimeUtils;
 
 
-//extension of runnable for clock that updates once every second
+/**
+ * custom implementation of runnable thatt enables live enabling/disabling
+ */
 public class TimerRunnable implements Runnable {
 
 
     private long refreshRate;
     private long elapsedTime = 0;
     private long runTime;
-    private long deltaTime;
     private View view;
     private Handler timerHandler;
     private boolean enableTimer = false;
 
-    //constructor for running updates on a textview
+    /**
+     * instantiates a timerRunnable
+     * @param textView the target textView
+     * @param handler
+     * @param refreshRate how often to update the clock in milliseconds
+     */
     public TimerRunnable(TextView textView, Handler handler, long refreshRate){
         this.refreshRate = refreshRate;
         this.view = textView;
@@ -57,7 +63,10 @@ public class TimerRunnable implements Runnable {
         timerHandler.postDelayed(this, refreshRate);
     }
 
-    //toggles the runnable on and off
+    /**
+     * enables or disables the runnable on the handler thread
+     * @param toggle toggles the timer on or off (true or false)
+     */
     public void enable(Boolean toggle){
 
         //start the runnable
