@@ -1,6 +1,7 @@
 package com.scheiner.traytracker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -21,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //set up toolbar and nav controller
+        Toolbar myToolbar = findViewById(R.id.mainToolbar);
+        setSupportActionBar(myToolbar);
+        myToolbar.setTitle("Tray Tracker");
 
         timerTextView = findViewById(R.id.timerText);
         timerButton = findViewById(R.id.timerButton);
